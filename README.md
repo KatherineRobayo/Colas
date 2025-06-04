@@ -48,7 +48,7 @@ Este programa permite realizar operaciones fundamentales de una cola:
 EJEMPLO 1 SISTEMA DE COLA-SOPORTE TÉCNICO 
 Este proyecto simula un sistema de atención por orden de llegada (FIFO) en un centro de soporte técnico. Utiliza una estructura de cola para gestionar a los clientes que solicitan ayuda, limitando la capacidad máxima a 5 personas en espera.
 
-1.Estructura proyecto:
+1.Estructura del proyecto:
 
 * SoporteTecnico:Contiene la lógica de la cola.
 Importa el Queue que es la interfaz que define una estructura de datos tipo cola (FIFO), LinkedList que es la implementación de Queue que permite añadir y eliminar elementos fácilmente.
