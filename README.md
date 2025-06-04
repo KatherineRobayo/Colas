@@ -47,4 +47,61 @@ Este programa permite realizar operaciones fundamentales de una cola:
 EJEMPLO 1 SISTEMA DE COLA-SOPORTE TÉCNICO 
 Este proyecto simula un sistema de atención por orden de llegada (FIFO) en un centro de soporte técnico. Utiliza una estructura de cola para gestionar a los clientes que solicitan ayuda, limitando la capacidad máxima a 5 personas en espera.
 
+1.Estructura proyecto:
+* SoporteTecnico:Contiene la lógica de la cola.
+Importa el Queue que es la interfaz que define una estructura de datos tipo cola (FIFO), LinkedList que es la implementación de Queue que permite añadir y eliminar elementos fácilmente.
+Se declara una cola de tipo String, que guarda los clientes (en este caso, una cadena que puede ser nombre y problema) y se inicializa con LinkedList, que permite operar como una cola con las operaciones offer(), poll(), peek(), etc.
+Se implementan los metodos solicitarSoporte(String cliente) que añade un cliente a la cola si no se ha alcanzado el límite de 5, se usa cola.offer(cliente) el cual añade el cliente al final de la cola y Si la cola está llena, muestra un mensaje diciendo que debe intentarlo más tarde,atenderCliente() Este método atiende al primer cliente en la cola.Si hay clientes, poll() elimina y devuelve el primer elemento y Si no hay nadie esperando, lo informa,verSiguiente()Muestra quién es el próximo en ser atendido sin sacarlo de la cola, usa peek() devuelve el primer elemento sin eliminarlo y Si la cola está vacía, informa al usuario, mostrarCola() Muestra todos los clientes que están en espera y si la cola está vacía, lo indica,estadoCola() Este informa cuántos clientes hay en la cola actualmente y usa cola.size() que devuelve el número actual de elementos.
 
+* Main: Tiene el menú y la interacción con el usuario.
+Se importa el scanner  que se usa para leer entradas del usuario desde la consola.
+Se inicializan dos variables sc: Permite leer entradas del usuario (opciones y datos) y soporteque es una instancia de la clase SoporteTecnico que administra la cola de clientes.
+Se utiliza un do-while para mostrar el menú y repetir hasta que el usuario decida salir (opcion == 0).
+sc.nextInt() lee el número de la opción elegida.
+sc.nextLine() es muy importante: limpia el salto de línea pendiente en el buffer después de leer un número, para evitar errores al leer textos después.
+
+2.Funcionalidades:
+- Solicitar soporte (Encolar): Permite ingresar el nombre del cliente junto con una breve descripción de su problema.
+  Si la cola no está llena, el cliente es agregado al final.
+  Si la cola ya está llena, se informa al usuario que debe intentar más tarde.
+- Atender al siguiente cliente (Desencolar):
+  El sistema elimina y atiende al primer cliente en la cola (el que llegó primero).
+- Ver quién es el siguiente:
+  Muestra al cliente que está en la primera posición de la cola sin eliminarlo.
+- Mostrar toda la cola:
+  Imprime en consola todos los clientes en espera, en el orden en que llegaron.
+- Ver estado de la cola: 
+  Muestra cuántos clientes hay actualmente en la cola y cuál es el límite máximo.
+- Salir:
+  Finaliza el programa mostrando un mensaje de despedida.
+
+EJEMPLO 2 EMPAREJAMIENTO DE JUGADORES:
+1.Estructura del proyecto:
+* Clase Emparejador:Esta clase representa el sistema de emparejamiento de jugadores gestionando dos estructuras:
+    - colaJugadores (Queue<String>): es una cola FIFO donde se almacenan los nombres de los jugadores que están esperando ser emparejados.
+    - partidas (List<String>): una lista donde se guardan las partidas ya formadas, como "Jugador1 vs Jugador2".
+  Uiliza los metodos:
+    - public void unirseCola(String jugador) el cual
+      - Agrega el nombre del jugador a la cola con offer(jugador).
+      - Luego verifica si hay al menos 2 jugadores en la cola.
+      Si hay 2 o más:
+      - Toma los dos primeros con poll().
+      - Forma una partida con el formato "Jugador1 vs Jugador2".
+      - Agrega esa partida a la lista partidas.
+    - public void verCola()
+    Muestra los jugadores que aún están esperando en la cola y si la cola está vacía, muestra un mensaje indicando que no hay jugadores.
+    - public void verPartidas()
+    Imprime todas las partidas que ya han sido formadas.
+    - public boolean isEmpty()
+    Devuelve true si no hay jugadores en la cola.
+
+* Clase Main:Esta clase  contiene el método main y el menú interactivo para el usuario.
+  Utiliza un Scanner para leer la entrada del usuario y un objeto Emparejador para acceder a la lógica principal.
+  S utiliza un bucle do-while que permite al usuario seguir usando el sistema hasta que decida salir.
+  
+2. Funcionalidades:
+- Unirse a la cola:El usuario ingresa su nombre como jugador,este nombre se agrega al final de la cola de espera Si hay al menos dos jugadores disponibles, el sistema empareja automáticamente a los dos primeros y crea una partida entre ellos.
+- Ver jugadores en la cola: Muestra en pantalla los nombres de los jugadores que aún no han sido emparejados, en el orden en que se unieron.
+- Ver partidas formadas:Lista todas las partidas ya formadas, en el orden en que fueron creadas.
+Cada partida muestra los dos jugadores que fueron emparejados.
+- Salir:Finaliza la ejecución del programa.
