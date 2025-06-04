@@ -9,6 +9,7 @@ PROGRAMA DE COLAS
 Este programa implementa una estructura de datos tipo Cola (Queue) utilizando el lenguaje de programación Java. A través de una interfaz de consola, el usuario puede interactuar con la estructura, realizar operaciones de encolado y desencolado, y observar el estado actual de la cola. 
 
 1.Estructura del proyecto:
+
 * Cola.java: En esta clase se implementa la estructura de la cola, esta clase define una estructura de datos tipo cola (FIFO: First-In,     First-Out), implementada con un arreglo (int[]) de tamaño fijo. 
 En esta los atributos que se usaron son:
   -queue: que almacena los elementos.
@@ -48,6 +49,7 @@ EJEMPLO 1 SISTEMA DE COLA-SOPORTE TÉCNICO
 Este proyecto simula un sistema de atención por orden de llegada (FIFO) en un centro de soporte técnico. Utiliza una estructura de cola para gestionar a los clientes que solicitan ayuda, limitando la capacidad máxima a 5 personas en espera.
 
 1.Estructura proyecto:
+
 * SoporteTecnico:Contiene la lógica de la cola.
 Importa el Queue que es la interfaz que define una estructura de datos tipo cola (FIFO), LinkedList que es la implementación de Queue que permite añadir y eliminar elementos fácilmente.
 Se declara una cola de tipo String, que guarda los clientes (en este caso, una cadena que puede ser nombre y problema) y se inicializa con LinkedList, que permite operar como una cola con las operaciones offer(), poll(), peek(), etc.
@@ -77,6 +79,7 @@ sc.nextLine() es muy importante: limpia el salto de línea pendiente en el buffe
 
 EJEMPLO 2 EMPAREJAMIENTO DE JUGADORES:
 1.Estructura del proyecto:
+
 * Clase Emparejador:Esta clase representa el sistema de emparejamiento de jugadores gestionando dos estructuras:
     - colaJugadores (Queue<String>): es una cola FIFO donde se almacenan los nombres de los jugadores que están esperando ser emparejados.
     - partidas (List<String>): una lista donde se guardan las partidas ya formadas, como "Jugador1 vs Jugador2".
