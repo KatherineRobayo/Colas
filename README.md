@@ -78,6 +78,7 @@ sc.nextLine() es muy importante: limpia el salto de línea pendiente en el buffe
   Finaliza el programa mostrando un mensaje de despedida.
 
 EJEMPLO 2 EMPAREJAMIENTO DE JUGADORES:
+
 1.Estructura del proyecto:
 
 * Clase Emparejador:Esta clase representa el sistema de emparejamiento de jugadores gestionando dos estructuras:
